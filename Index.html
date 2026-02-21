@@ -5,29 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neeraj Kumar - Portfolio</title>
     <link rel="stylesheet" href="site.css">
+    
 </head>
 <body>
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+        <a href="#home" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About Me</a>
+        <a href="#skills" onclick="closeMenu()">Skills</a>
+        <a href="#experience" onclick="closeMenu()">Experience</a>
+        <a href="#projects" onclick="closeMenu()">Projects</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
 </div>
 
 <!-- HERO SECTION -->
 <div class="hero" id="home">
     <div class="hero-left">
         <div class="hero-badge">DATA ANALYST</div>
-
         <h1>
             Neeraj <br />
             <span>Kumar</span>
         </h1>
-
         <p>
             I help people finding <span class="highlight">insights</span>
             through <span class="highlight">data</span> and building automated solutions.
@@ -35,7 +41,6 @@
     </div>
 
     <div class="hero-right">
-        <!-- Replace with your actual image path -->
         <img src="Images/profile.png" alt="Neeraj Kumar" class="hero-img" />
     </div>
 
@@ -46,7 +51,6 @@
 <!-- ABOUT SECTION -->
 <div class="about-section" id="about">
     <div class="about-container">
-
         <div class="about-left">
             <div class="about-badge">About Me</div>
             <h2>Hello, I'm <span>Neeraj!</span></h2>
@@ -57,122 +61,59 @@
                 <span class="highlight">Data Analyst</span> with extensive professional experience in
                 Python, SQL Server, PySpark, Power BI, Tableau, Google Apps Script, SSIS, and AI tools.
             </p>
-
             <p>
-                Proficient in <span class="highlight">data wrangling</span> with Pandas and NumPy, 
-                building <span class="highlight">end-to-end ETL pipelines</span>, creating automated 
-                workflows, and developing interactive dashboards. Skilled in database optimization, 
+                Proficient in <span class="highlight">data wrangling</span> with Pandas and NumPy,
+                building <span class="highlight">end-to-end ETL pipelines</span>, creating automated
+                workflows, and developing interactive dashboards. Skilled in database optimization,
                 query performance tuning, and transforming raw data into actionable business insights.
             </p>
-
             <p>
-                Currently working at <span class="highlight">Maxcure Nutravedic Ltd</span> (August 2025 - Present), 
+                Currently working at <span class="highlight">Maxcure Nutravedic Ltd</span> (August 2025 - Present),
                 previously at <span class="highlight">Clove Dental</span> (May 2024 - August 2025).
             </p>
-
             <div class="about-buttons">
                 <a href="#projects" class="btn btn-outline">View Projects</a>
                 <a href="#contact" class="btn btn-solid">Get In Touch</a>
             </div>
         </div>
-
     </div>
 </div>
 
 
 <!-- SKILLS SECTION -->
 <div class="skills-section" id="skills">
-
     <div class="skills-header">
         <span class="skills-badge">Technical Skills</span>
     </div>
 
     <div class="skills-grid">
-
-        <!-- Programming Languages -->
         <div class="skills-col">
             <h3><span>Programming</span><br />Languages</h3>
-
-            <div class="skill-item">
-                <div class="skill-icon">SQL</div>
-                <p>SQL / T-SQL</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">Py</div>
-                <p>Python</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">PS</div>
-                <p>PySpark</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">JS</div>
-                <p>JavaScript</p>
-            </div>
+            <div class="skill-item"><div class="skill-icon">SQL</div><p>SQL / T-SQL</p></div>
+            <div class="skill-item"><div class="skill-icon">Py</div><p>Python</p></div>
+            <div class="skill-item"><div class="skill-icon">PS</div><p>PySpark</p></div>
+            <div class="skill-item"><div class="skill-icon">JS</div><p>JavaScript</p></div>
         </div>
 
-        <!-- Data Tools & Platforms -->
         <div class="skills-col">
             <h3><span>Data Tools &</span><br />Platforms</h3>
-
-            <div class="skill-item">
-                <div class="skill-icon">SQL</div>
-                <p>SQL Server</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">SSIS</div>
-                <p>SSIS (ETL)</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">XL</div>
-                <p>Advanced Excel</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">GS</div>
-                <p>Google Sheets API</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">VS</div>
-                <p>VS Code</p>
-            </div>
+            <div class="skill-item"><div class="skill-icon">SQL</div><p>SQL Server</p></div>
+            <div class="skill-item"><div class="skill-icon">SSIS</div><p>SSIS (ETL)</p></div>
+            <div class="skill-item"><div class="skill-icon">XL</div><p>Advanced Excel</p></div>
+            <div class="skill-item"><div class="skill-icon">GS</div><p>Google Sheets API</p></div>
+            <div class="skill-item"><div class="skill-icon">VS</div><p>VS Code</p></div>
         </div>
 
-        <!-- Data Visualization -->
         <div class="skills-col">
             <h3><span>Visualization &</span><br />BI Tools</h3>
-
-            <div class="skill-item">
-                <div class="skill-icon">PBI</div>
-                <p>Power BI</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">TB</div>
-                <p>Tableau</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">DAX</div>
-                <p>DAX Formulas</p>
-            </div>
-
-            <div class="skill-item">
-                <div class="skill-icon">AI</div>
-                <p>ChatGPT & AI Tools</p>
-            </div>
+            <div class="skill-item"><div class="skill-icon">PBI</div><p>Power BI</p></div>
+            <div class="skill-item"><div class="skill-icon">TB</div><p>Tableau</p></div>
+            <div class="skill-item"><div class="skill-icon">DAX</div><p>DAX Formulas</p></div>
+            <div class="skill-item"><div class="skill-icon">AI</div><p>ChatGPT & AI Tools</p></div>
         </div>
 
-        <!-- Core Competencies -->
         <div class="skills-col">
             <h3><span>Core</span><br />Competencies</h3>
-
             <ul class="skills-list">
                 <li>ETL Pipeline Development</li>
                 <li>Data Wrangling (Pandas, NumPy)</li>
@@ -185,7 +126,6 @@
                 <li>Google Apps Script</li>
             </ul>
         </div>
-
     </div>
 </div>
 
@@ -198,8 +138,6 @@
     </div>
 
     <div class="experience-timeline">
-        
-        <!-- Current Position -->
         <div class="experience-card">
             <div class="experience-duration">August 2025 - Present</div>
             <div class="experience-content">
@@ -217,7 +155,6 @@
             </div>
         </div>
 
-        <!-- Previous Position -->
         <div class="experience-card">
             <div class="experience-duration">May 2024 - August 2025</div>
             <div class="experience-content">
@@ -236,7 +173,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -249,19 +185,15 @@
     </div>
 
     <div class="projects-grid">
-
-        <!-- Project 1 -->
         <div class="project-card">
             <div class="project-number">01</div>
             <h3>Doctor Incentive Data Automation</h3>
             <p class="project-type">Web Application | Google Apps Script</p>
-            
             <p class="project-description">
-                Designed and deployed a custom web-based portal using Google Apps Script to automate 
-                incentive data distribution for 1,500+ doctors. Enabled secure, personalized access 
+                Designed and deployed a custom web-based portal using Google Apps Script to automate
+                incentive data distribution for 1,500+ doctors. Enabled secure, personalized access
                 through email-based authentication, replacing manual Outlook processes.
             </p>
-
             <div class="project-impact">
                 <div class="impact-item">
                     <span class="impact-number">1,500+</span>
@@ -272,7 +204,6 @@
                     <span class="impact-label">Saved/Month</span>
                 </div>
             </div>
-
             <div class="project-tags">
                 <span class="tag">Google Apps Script</span>
                 <span class="tag">Google Sheets API</span>
@@ -281,18 +212,15 @@
             </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card">
             <div class="project-number">02</div>
             <h3>Automated Data Processing & Visualization</h3>
             <p class="project-type">ETL Pipeline | Dashboard Development</p>
-            
             <p class="project-description">
-                Developed end-to-end automated data pipeline for extraction, transformation, and 
-                visualization. Integrated data from CSV files, REST APIs, and SQL Server to deliver 
+                Developed end-to-end automated data pipeline for extraction, transformation, and
+                visualization. Integrated data from CSV files, REST APIs, and SQL Server to deliver
                 real-time insights through Power BI and Tableau dashboards.
             </p>
-
             <div class="project-highlights">
                 <ul>
                     <li>Automated data ingestion from multiple sources</li>
@@ -301,7 +229,6 @@
                     <li>Created interactive dashboards for operational monitoring</li>
                 </ul>
             </div>
-
             <div class="project-tags">
                 <span class="tag">Python</span>
                 <span class="tag">SQL Server</span>
@@ -311,18 +238,15 @@
             </div>
         </div>
 
-        <!-- Project 3 -->
         <div class="project-card">
             <div class="project-number">03</div>
             <h3>IVR Hangup Analysis</h3>
             <p class="project-type">Data Analysis | Performance Optimization</p>
-            
             <p class="project-description">
-                Conducted advanced data analysis on IVR call data to identify patterns in customer 
-                hangups. Applied data wrangling with Pandas and NumPy, statistical profiling, and 
+                Conducted advanced data analysis on IVR call data to identify patterns in customer
+                hangups. Applied data wrangling with Pandas and NumPy, statistical profiling, and
                 created visualization dashboards to drive operational improvements.
             </p>
-
             <div class="project-highlights">
                 <ul>
                     <li>Data cleaning and standardization using Python</li>
@@ -331,7 +255,6 @@
                     <li>Real-time monitoring dashboards</li>
                 </ul>
             </div>
-
             <div class="project-tags">
                 <span class="tag">Python (Pandas/NumPy)</span>
                 <span class="tag">SQL Server</span>
@@ -339,7 +262,6 @@
                 <span class="tag">Power BI</span>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -347,24 +269,19 @@
 <!-- EDUCATION & ACHIEVEMENTS SECTION -->
 <div class="education-section" id="education">
     <div class="section-split">
-        
-        <!-- Education Column -->
         <div class="education-col">
             <div class="section-badge">Education</div>
             <h2><span>Academic</span> Background</h2>
-
             <div class="education-item">
                 <div class="edu-year">2021 - 2024</div>
                 <h3>Bachelor of Science in Mathematics (Hons)</h3>
                 <p>Veer Kunwar Singh University, Ara</p>
             </div>
-
             <div class="education-item">
                 <div class="edu-year">2021</div>
                 <h3>12th Standard</h3>
                 <p>Bihar School Examination Board (B.S.E.B), Patna</p>
             </div>
-
             <div class="education-item">
                 <div class="edu-year">2019</div>
                 <h3>10th Standard</h3>
@@ -372,11 +289,9 @@
             </div>
         </div>
 
-        <!-- Achievements Column -->
         <div class="achievements-col">
             <div class="section-badge">Achievements</div>
             <h2><span>Awards &</span> Recognition</h2>
-
             <div class="achievement-item">
                 <div class="achievement-icon">🏆</div>
                 <div class="achievement-content">
@@ -385,7 +300,6 @@
                     <p class="achievement-desc">Received from stakeholder for outstanding performance and contribution</p>
                 </div>
             </div>
-
             <div class="achievement-item">
                 <div class="achievement-icon">⭐</div>
                 <div class="achievement-content">
@@ -394,7 +308,6 @@
                     <p class="achievement-desc">Star Dental - Excellent client feedback and exceptional service delivery</p>
                 </div>
             </div>
-
             <div class="strengths-box">
                 <h4>Core Strengths</h4>
                 <div class="strengths-tags">
@@ -407,7 +320,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -415,15 +327,13 @@
 <!-- CONTACT SECTION -->
 <div class="contact-section" id="contact">
     <div class="contact-container">
-        
         <div class="contact-left">
             <div class="section-badge">Get In Touch</div>
             <h2>Let's Work <span>Together</span></h2>
             <p>
-                I'm always interested in hearing about new opportunities, challenging projects, 
+                I'm always interested in hearing about new opportunities, challenging projects,
                 or collaborations. Feel free to reach out!
             </p>
-
             <div class="contact-info">
                 <div class="contact-item">
                     <div class="contact-icon">📍</div>
@@ -432,15 +342,13 @@
                         <p>Delhi NCR, India</p>
                     </div>
                 </div>
-
                 <div class="contact-item">
                     <div class="contact-icon">📧</div>
                     <div>
                         <h4>Email</h4>
-                        <p>neeraj.kumar.in73@gmail.com</p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="09676c6c7b686327627c64687b2760673e3a496e64686065276a6664">[email&#160;protected]</a></p>
                     </div>
                 </div>
-
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <div>
@@ -449,7 +357,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="availability">
                 <span class="status-indicator"></span>
                 <span>Available for opportunities</span>
@@ -465,7 +372,6 @@
                 <button type="submit" class="btn btn-solid">Send Message</button>
             </form>
         </div>
-
     </div>
 </div>
 
@@ -483,5 +389,12 @@
     </div>
 </div>
 
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    function toggleMenu() {
+        const nav = document.getElementById('navLinks');
+        const hamburger = document.getElementById('hamburger');
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('active');
+    }
+
+    function closeMenu() {
