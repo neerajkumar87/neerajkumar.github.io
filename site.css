@@ -305,6 +305,9 @@ html {
     overflow: hidden;
     z-index: 1;
     display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
 }
 
 .btn::before {
@@ -341,6 +344,7 @@ html {
 .btn-solid {
     border: 2px solid #ffc107;
     color: #ffc107;
+    background: transparent;
 }
 
 .btn-solid:hover {
@@ -1094,6 +1098,7 @@ html {
     color: white;
     font-size: 16px;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .form-input:focus,
@@ -1146,9 +1151,38 @@ html {
     font-size: 14px;
 }
 
+/* ==================== HAMBURGER MENU ==================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 100;
+    padding: 5px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #ffc107;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
 /* ==================== MOBILE RESPONSIVE ==================== */
 
-/* Tablet and below (max-width: 1024px) */
+/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
     .navbar {
         padding: 15px 30px;
@@ -1206,38 +1240,73 @@ html {
 
 /* Mobile (max-width: 768px) */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 12px 20px;
-        gap: 10px;
+
+    .hamburger {
+        display: flex;
     }
 
-    .navbar a {
-        font-size: 11px;
-        padding: 6px 8px;
+    .navbar {
+        padding: 15px 20px;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        gap: 0;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(2, 0, 36, 0.97);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        z-index: 99;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 10px 0;
+        transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #ffc107;
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
-        padding: 90px 30px 50px;
+        padding: 100px 25px 60px;
         height: auto;
         min-height: 100vh;
         justify-content: center;
+        gap: 40px;
     }
 
     .hero-left {
         max-width: 100%;
-        margin-bottom: 35px;
     }
 
     .hero h1 {
-        font-size: 46px;
+        font-size: 48px;
         line-height: 1.2;
     }
 
     .hero p {
         font-size: 17px;
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
     .hero-badge {
@@ -1246,9 +1315,9 @@ html {
     }
 
     .hero-img {
-        width: 280px;
-        height: 310px;
-        border-width: 8px;
+        width: 220px;
+        height: 250px;
+        border-width: 7px;
         display: block;
         margin: 0 auto;
     }
@@ -1258,14 +1327,13 @@ html {
         bottom: 20px;
     }
 
-    /* About Section */
     .about-section {
-        padding: 80px 30px;
+        padding: 80px 25px;
     }
 
     .about-container {
         flex-direction: column;
-        gap: 40px;
+        gap: 35px;
     }
 
     .about-left,
@@ -1283,6 +1351,7 @@ html {
 
     .about-buttons {
         flex-direction: column;
+        align-items: stretch;
     }
 
     .btn {
@@ -1290,19 +1359,20 @@ html {
         text-align: center;
     }
 
-    /* Skills Section */
     .skills-section {
-        padding: 80px 30px;
+        padding: 80px 25px;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 35px;
     }
 
     .skills-col {
-        border-bottom: 1px solid rgba(255,255,255,0.25);
-        padding-bottom: 40px;
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom: 35px;
     }
 
     .skills-col:last-child {
@@ -1312,60 +1382,56 @@ html {
 
     .skills-col h3 {
         font-size: 24px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
     }
 
-    /* Experience Section */
     .experience-section {
-        padding: 80px 30px;
+        padding: 80px 25px;
     }
 
     .experience-header h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .experience-card {
-        padding: 25px 20px;
+        padding: 20px 18px;
     }
 
     .experience-card:hover {
-        transform: translateX(0);
         transform: translateY(-5px);
     }
 
     .experience-content h3 {
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .experience-content h4 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
-    /* Projects Section */
     .projects-section {
-        padding: 80px 30px;
+        padding: 80px 25px;
     }
 
     .projects-header h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .projects-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 25px;
     }
 
     .project-card {
-        padding: 25px 20px;
+        padding: 22px 18px;
     }
 
     .project-card h3 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
-    /* Education Section */
     .education-section {
-        padding: 80px 30px;
+        padding: 80px 25px;
     }
 
     .section-split {
@@ -1375,47 +1441,40 @@ html {
 
     .education-col h2,
     .achievements-col h2 {
-        font-size: 32px;
-        margin-bottom: 30px;
+        font-size: 30px;
+        margin-bottom: 25px;
     }
 
-    /* Contact Section */
     .contact-section {
-        padding: 80px 30px;
+        padding: 80px 25px;
     }
 
     .contact-container {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 45px;
     }
 
     .contact-left h2 {
-        font-size: 36px;
+        font-size: 34px;
     }
 
     .contact-left p {
         font-size: 16px;
-    }
-
-    .contact-item {
-        flex-direction: row;
-        align-items: flex-start;
+        margin-bottom: 25px;
     }
 
     .contact-item:hover {
-        transform: translateX(0);
         transform: translateY(-3px);
     }
 
-    /* Footer */
     .footer {
-        padding: 30px 30px;
+        padding: 30px 25px;
     }
 
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
+        gap: 12px;
     }
 
     .footer-left h3 {
@@ -1430,22 +1489,12 @@ html {
 
 /* Small Mobile (max-width: 480px) */
 @media (max-width: 480px) {
-    .navbar {
-        padding: 10px 15px;
-        gap: 8px;
-    }
-
-    .navbar a {
-        font-size: 11px;
-        padding: 6px 8px;
-    }
-
     .hero {
-        padding: 90px 20px 50px;
+        padding: 90px 18px 50px;
     }
 
     .hero h1 {
-        font-size: 36px;
+        font-size: 38px;
     }
 
     .hero p {
@@ -1453,11 +1502,9 @@ html {
     }
 
     .hero-img {
-        width: 200px;
-        height: 230px;
+        width: 190px;
+        height: 215px;
         border-width: 6px;
-        display: block;
-        margin: 0 auto;
     }
 
     .about-section,
@@ -1466,19 +1513,19 @@ html {
     .projects-section,
     .education-section,
     .contact-section {
-        padding: 60px 20px;
+        padding: 60px 18px;
     }
 
     .about-left h2,
     .experience-header h2,
     .projects-header h2,
     .contact-left h2 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .education-col h2,
     .achievements-col h2 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .skills-col h3 {
@@ -1487,7 +1534,7 @@ html {
 
     .experience-card,
     .project-card {
-        padding: 20px 15px;
+        padding: 18px 14px;
     }
 
     .project-number {
@@ -1500,33 +1547,26 @@ html {
     }
 
     .footer {
-        padding: 25px 20px;
+        padding: 25px 18px;
     }
 }
 
-/* Very Small Screens (max-width: 360px) */
+/* Very Small (max-width: 360px) */
 @media (max-width: 360px) {
     .hero h1 {
         font-size: 32px;
     }
 
     .hero-img {
-        width: 180px;
-        height: 210px;
-        display: block;
-        margin: 0 auto;
+        width: 170px;
+        height: 195px;
     }
 
     .about-left h2,
     .experience-header h2,
     .projects-header h2,
     .contact-left h2 {
-        font-size: 28px;
-    }
-
-    .navbar a {
-        font-size: 10px;
-        padding: 5px 6px;
+        font-size: 26px;
     }
 }
 
